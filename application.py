@@ -5,6 +5,7 @@ import urllib, urllib2, json
 import yelp_api
 
 app = Flask(__name__)
+
 SF_TRUCK_API = 'http://data.sfgov.org/resource/rqzj-sfat.json?facilitytype=TRUCK&status=APPROVED&$$app_token='
 SF_TRUCK_API_KEY = '0msvwSY2jAUo0rKXd4b1KKmX7'
 
@@ -23,7 +24,5 @@ def load_truck_data(truck):
     data = yelp_api.query_api(truck)
     return json.dumps(data)
 
-app.run(debug=True)
-
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', debug=True)
