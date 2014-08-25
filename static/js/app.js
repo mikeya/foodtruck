@@ -26,7 +26,7 @@ $(function(){
         };
 
         if(d.applicant.indexOf(',') > -1) {
-            d.applicant.replace(/,/g,'');
+            d.applicant = d.applicant.replace(/,/g,'');
         }
         if(d.applicant.indexOf('LLC') > -1){
             d.applicant = d.applicant.substr(0, d.applicant.indexOf('LLC'))
@@ -106,7 +106,7 @@ $(function(){
                                 
                             });
                         }catch(e){
-                            
+
                         }
 
                         truckInfo.setContent(_.template($('#truck-template').html(), truck));
