@@ -26,7 +26,7 @@ $(function(){
         };
 
         if(d.applicant.indexOf(',') > -1) {
-            d.applicant.replace(',','');
+            d.applicant.replace(/,/g,'');
         }
         if(d.applicant.indexOf('LLC') > -1){
             d.applicant = d.applicant.substr(0, d.applicant.indexOf('LLC'))
@@ -94,16 +94,20 @@ $(function(){
                     }
 
                     google.maps.event.addListener(truckMarker, 'click', function() {
-                        $.getJSON('/trucks/'+truck.applicant, function(data){
-                            if(data){
-                                truck.image_url = data.image_url;
-                                truck.rating_img_url = data.rating_img_url;
-                                truck.review_count = data.review_count;
-                                truck.url = data.url;
-                                truck.snippet_text = data.snippet_text;
-                            }
-                            truckInfo.setContent(_.template($('#truck-template').html(), truck));
-                        });
+                        try{
+                            $.getJSON('/trucks/'+truck.applicant, function(data){
+                                if(data){
+                                    truck.image_url = data.image_url;
+                                    truck.rating_img_url = data.rating_img_url;
+                                    truck.review_count = data.review_count;
+                                    truck.url = data.url;
+                                    truck.snippet_text = data.snippet_text;
+                                }
+                                
+                            });
+                        }
+
+                        truckInfo.setContent(_.template($('#truck-template').html(), truck));
                         truckInfo.open(map,truckMarker);
                     });
                 });
