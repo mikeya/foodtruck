@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}"/>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyAVqjpx3iTNBBe9cs4r8leIJpn4mq147u4">
+    </script>
+</head>
+<body>
+<div id="map-canvas" class="fade"></div>
+<div id="message">
+    <h1>Mike's Food Truck Locator</h1>
+    <p class="status"></p>
+</div>
+
+<script src="{{url_for('static', filename='js/lib/jquery-1.11.1.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/lib/underscore-min.js')}}"></script>
+<script src="{{url_for('static', filename='js/lib/backbone-min.js')}}"></script>
+<script src="{{url_for('static', filename='js/lib/markerclusterer_compiled.js')}}"></script>
+<script src="{{url_for('static', filename='js/app.js')}}"></script>
+
+<script type="text/template" id="truck-template">
+    <div class="markerView">
+        <h2><%- applicant %></h2>
+        <div class="rating">
+            <img src="<%- rating_img_url %>" alt=""/>
+            <%- review_count %> Yelp Reviews
+        </div>
+        <div class="info">
+            <img src="<%- image_url %>" alt="" style="vertical-align: top;"/>
+            <div>
+                <b>Food Items:</b>
+                <span> <%- fooditems %></span>
+            </div>
+        </div>
+        <div class="review">
+            <b>Review:</b>
+            <span><%- snippet_text %></span>
+            <a href="<%- url %>">Read More on Yelp</a>
+
+        </div>
+        <a href='<%- schedule %>'>Download Schedule</a>
+
+    </div>
+</script>
+
+</body>
+
+</html>

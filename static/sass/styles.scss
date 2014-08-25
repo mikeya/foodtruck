@@ -1,0 +1,56 @@
+body,html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: Roboto, Arial, sans-serif;
+}
+#message {
+  padding:10px 20px;
+  box-sizing: border-box;
+  position:absolute;
+  top:200px;
+  left: 50%;
+  margin-left:-250px;
+  background:white;
+  box-shadow:2px 2px 6px rgba(0,0,0,.3);
+  text-align:center;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  &.move {
+    top:10px;
+    left:100px;
+    margin-left:0px;
+  }
+}
+
+#map-canvas {
+  height: 100%;
+  &.fade {
+    opacity: .2;
+  }
+}
+
+.markerView{
+  font-size:16px;
+
+  h2, > div{
+    margin:6px 0;
+  }
+  .rating img{
+    vertical-align: bottom;
+  }
+  .info img {
+    display:block;
+    float:left;
+    margin-right:6px;
+  }
+
+  a{
+    display: block;
+  }
+
+}
