@@ -23,7 +23,7 @@ $(function(){
     /* Helper Methods */
 
     var cleanUpData = function(d){
-        if(d.applicant.indexOf('Catering') > -1 || d.applicant.indexOf("May Sun Kitchen") > -1 || d.applicant.indexOf("Munch A Bunch") > -1) {
+        if(d.applicant.indexOf('Catering') > -1 || d.applicant.indexOf("May Sun Kitchen") > -1 || d.applicant.indexOf("Munch A Bunch") > -1 || d.applicant.indexOf("Senor Si") > -1 ||) {
             return null;
         }
         if(d.applicant.indexOf(',') > -1) {
@@ -108,6 +108,8 @@ $(function(){
                                 }else {
                                     truckInfo.setContent(_.template($('#truck-template-bare').html(), truck));
                                 }
+                            }).error(function() { 
+                                 truckInfo.setContent(_.template($('#truck-template-bare').html(), truck));
                             });
                         }catch(e){
                             truckInfo.setContent(_.template($('#truck-template-bare').html(), truck));
