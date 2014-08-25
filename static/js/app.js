@@ -105,6 +105,8 @@ $(function(){
                                 }
                                 
                             });
+                        }catch(e){
+                            
                         }
 
                         truckInfo.setContent(_.template($('#truck-template').html(), truck));
