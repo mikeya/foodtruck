@@ -57,7 +57,6 @@ def get_business(business_id):
 def query_api(name):
 
     url_params = {
-        # 'category_filter': 'foodtrucks',
         'location': 'San Francisco, CA',
         'term': name,
         'limit': SEARCH_LIMIT
