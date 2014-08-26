@@ -1,6 +1,6 @@
 SF Food Truck Locater
-[Link to App](http://foodtruck-env-ummn222ygm.elasticbeanstalk.com/)
 =========
+[Link to App](http://foodtruck-env-ummn222ygm.elasticbeanstalk.com/)
 
 Technical Track: Full Stack
 
